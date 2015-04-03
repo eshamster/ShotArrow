@@ -193,6 +193,18 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
         camPosMover.ResetRotate();
     }
 
+    void Update()
+    {
+        AdjustAim();
+    }
+
+    private void AdjustAim()
+    {
+        // Calc by the look-at point and the the loation of the main camera
+        shotProtoArrow.startPnt = camPosMover.gazeOffset;
+        shotProtoArrow.targetPnt = camPosMover.gazeOffset + (camPosMover.gazeOffset - camPosMover.CamPos) * 100;
+    }
+
     void OnGUI()
     {
         

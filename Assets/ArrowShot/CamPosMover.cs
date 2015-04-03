@@ -33,8 +33,8 @@ public class CamPosMover : MonoBehaviour
             dist -= distChange;
         dist = InRange(dist, minDist, maxDist);
 
-        CamPos.transform.localEulerAngles = euler;
-        CamPos.transform.localPosition = Quaternion.Euler(euler) * new Vector3(0, 0, -1) * dist + gazeOffset;
+        CamPosObj.transform.localEulerAngles = euler;
+        CamPosObj.transform.localPosition = Quaternion.Euler(euler) * new Vector3(0, 0, -1) * dist + gazeOffset;
     }
 
     public void ResetRotate()
@@ -52,5 +52,6 @@ public class CamPosMover : MonoBehaviour
             return val;
     }
 
-    private GameObject CamPos { get { return gameObject; } }
+    private GameObject CamPosObj { get { return gameObject; } }
+    public Vector3 CamPos { get { return CamPosObj.transform.localPosition;  } }
 }
