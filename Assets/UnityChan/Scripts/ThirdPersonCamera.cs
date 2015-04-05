@@ -81,14 +81,6 @@ public class ThirdPersonCamera : MonoBehaviour
 		transform.forward = frontPos.forward;
 	}
 
-    void OnGUI()
-    {
-        float length = 10f;
-        var center = new Vector2(Screen.width / 2f, Screen.height / 2f);
-
-        GUI.Box(new Rect(center.x - length / 2f, center.y - length / 2f, length, length), "");
-    }
-
 	void setCameraPositionJumpView()
 	{
 		// Change Jump Camera
